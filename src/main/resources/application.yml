@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: lambda
+  mvc:
+    static-path-pattern: /**
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+server:
+  port: 8888
+  servlet:
+    context-path: /lambda
+mybatis:
+  configuration:
+    call-setters-on-nulls: true
+
+logging:
+  config: classpath:logback.xml
+
+#mybatis-plus配置控制台打印完整带参数SQL语句
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
