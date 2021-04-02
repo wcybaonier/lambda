@@ -5,7 +5,7 @@
     <insert id="insert">
         insert into spc_room_use(COMPARTMENT_ID,USE_ID,USE_NAME,update_time) values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.compartmentId},#{item.useId},#{item.useName},NOW())
+            (#{item.compartmentId},#{item.useId},#{item.useName})
         </foreach>
     </insert>
 </mapper>
