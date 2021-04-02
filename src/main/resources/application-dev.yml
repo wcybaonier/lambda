@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      datasource:
+        master:
+          url: jdbc:mysql://172.25.242.28:3306/idc_db?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false&serverTimezone=GMT%2B8
+          username: root
+          password: Huawei12#$
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          max-idle: 10
+          max-wait: 10000
+          min-idle: 5
+          initial-size: 5
+          validation-query: SELECT 1
+          test-on-borrow: false
+          test-while-idle: true
+          time-between-eviction-runs-millis: 18800
+        oracle:
+          driver-class-name: oracle.jdbc.driver.OracleDriver
+          url: jdbc:oracle:thin:@134.95.3.28:1521:report
+          username: ALL_REPORT
+          password: ALL_REPORT
