@@ -2,7 +2,7 @@ spring:
   profiles:
     active: local
   application:
-    name: lambda
+    name: timed-task
   mvc:
     static-path-pattern: /**
   jackson:
@@ -11,7 +11,7 @@ spring:
 server:
   port: 8888
   servlet:
-    context-path: /lambda
+    context-path: /timed-task
 mybatis:
   configuration:
     call-setters-on-nulls: true
