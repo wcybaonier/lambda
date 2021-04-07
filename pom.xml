@@ -8,10 +8,10 @@
         <version>2.2.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.unicom</groupId>
-    <artifactId>timed-task</artifactId>
+    <groupId>com</groupId>
+    <artifactId>lambda</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>timed-task</name>
+    <name>lambda</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
@@ -79,6 +79,12 @@
             <groupId>com.baomidou</groupId>
             <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
             <version>3.1.0</version>
+        </dependency>
+
+        <!--添加rabbit mq依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
     </dependencies>
 
