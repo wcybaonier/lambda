@@ -12,12 +12,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.UUID;
- 
+
 @Aspect
 @Component
-public class LogIdAspect {
+public class LoginLogAspect {
  
-    private static final Logger logger = LoggerFactory.getLogger(LogIdAspect.class);
+    private static final Logger logger = LoggerFactory.getLogger(LoginLogAspect.class);
  
     /**
      * 定义切点Pointcut
@@ -26,7 +26,7 @@ public class LogIdAspect {
      * 第三个*号：表示方法名，*号表示所有的方法
      * 后面括弧里面表示方法的参数，两个句点表示任何参数
      */
-    @Pointcut("execution(* com.lambda.*..*Controller.*(..))")
+    @Pointcut("execution(* com.lambda.*..LoginController.*(..))")
     public void executionService() {}
  
     /**
@@ -35,10 +35,9 @@ public class LogIdAspect {
      */
     @Before(value = "executionService()")
     public void doBefore(JoinPoint joinPoint){
-        String requestId = String.valueOf(UUID.randomUUID());
-        MDC.put("requestId",requestId);
         logger.info("类名:"+joinPoint.getSignature().getDeclaringTypeName()+
                 "、方法名: "+joinPoint.getSignature().getName()+"()、====>@Before：请求参数为：{}",Arrays.toString(joinPoint.getArgs()));
+        //插入登陆信息 方法名，请求url，入参等
     }
  
     /**
@@ -50,7 +49,5 @@ public class LogIdAspect {
     public void  doAfterReturning(JoinPoint joinPoint,Object returnValue){
         logger.info("类名:"+joinPoint.getSignature().getDeclaringTypeName()+
                 "、方法名: "+joinPoint.getSignature().getName()+"()、====>@Before：请求参数为：{}",Arrays.toString(joinPoint.getArgs()));
-        // 处理完请求，返回内容
-        MDC.clear();
     }
 }
