@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/mete")
@@ -34,5 +35,13 @@ public class MeteInfoController {
     @RequestMapping("queryListLambda")
     public String selectListLambda(){
         return meteInfoService.queryListLambda();
+    }
+    /**
+     *  导出
+     * @return
+     */
+    @RequestMapping("excel")
+    public String excel(HttpServletResponse response){
+        return meteInfoService.excel(response);
     }
 }

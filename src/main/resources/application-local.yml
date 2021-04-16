@@ -4,7 +4,7 @@ spring:
       primary: master
       datasource:
         master:
-          url: jdbc:mysql://172.25.242.28:3306/idc_db?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false&serverTimezone=GMT%2B8
+          url: jdbc:mysql://134.95.3.133:3306/idc_db?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false&serverTimezone=GMT%2B8
           username: root
           password: Huawei12#$
           driver-class-name: com.mysql.cj.jdbc.Driver
