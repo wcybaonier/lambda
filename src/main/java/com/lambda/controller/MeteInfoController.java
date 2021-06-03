@@ -24,6 +24,7 @@ public class MeteInfoController {
     @RequestMapping("queryList")
     public String selectList(){
         logger.info("-----queryList");
+        logger.info("-----queryList11");
         return meteInfoService.selectList();
     }
 
